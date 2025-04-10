@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es6", // 生成 ES6 代码，现代浏览器支持
+    "module": "esnext", // 使用 ES 模块，适合浏览器中的 <script type="module">
+    "strict": true, // 启用严格模式
+    "esModuleInterop": true, // 兼容 CommonJS 模块（如果需要引入第三方库）
+    "forceConsistentCasingInFileNames": true, // 文件名大小写一致
+    "skipLibCheck": true, // 跳过类型声明文件检查
+    "outDir": "./dist", // 编译后的文件输出到 dist 文件夹
+    "declaration": true, // 生成类型声明文件
+    "declarationDir": "./dist/types" // 类型声明文件的输出目录（可选）
+  },
+  "include": [
+    "src/**/*"
+  ], // 包含 src 文件夹中的所有文件
+  "exclude": [
+    "node_modules"
+  ] // 排除 node_modules 文件夹
+}

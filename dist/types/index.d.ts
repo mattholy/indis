@@ -1,0 +1,31 @@
+export declare class Indis {
+    private dbName;
+    private storeName;
+    private db?;
+    private channels;
+    private broadcaster?;
+    constructor(dbName?: string, storeName?: string);
+    private getDB;
+    private readRaw;
+    set(key: string, value: any, ttl?: number): Promise<void>;
+    get(key: string): Promise<any>;
+    del(key: string): Promise<void>;
+    expire(key: string, ttl: number): Promise<boolean>;
+    ttl(key: string): Promise<number>;
+    keys(): Promise<string[]>;
+    clear(): Promise<void>;
+    incr(key: string): Promise<number>;
+    decr(key: string): Promise<number>;
+    hset(key: string, field: string, value: any): Promise<void>;
+    hget(key: string, field: string): Promise<any>;
+    hdel(key: string, field: string): Promise<void>;
+    hgetall(key: string): Promise<Record<string, any>>;
+    lpush(key: string, value: any): Promise<number>;
+    rpush(key: string, value: any): Promise<number>;
+    lpop(key: string): Promise<any>;
+    rpop(key: string): Promise<any>;
+    llen(key: string): Promise<number>;
+    publish(channel: string, message: any): void;
+    subscribe(channel: string, handler: (message: any) => void): void;
+    unsubscribe(channel: string, handler: (message: any) => void): void;
+}
